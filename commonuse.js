@@ -37,7 +37,7 @@ function AlertBox(message, title, func, message_without_buttons){
 //  show an alert message on a element
 //  need a <div id="formcheckdiv"> </div> on the page where call this function; and an id as parameter
 //  call :   showAlertOnItem("username","can not blank")
-//  see registerajax.ctp for an example
+//  see registerajax.ctp for an example  7499080
 
     
 function showAlertOnItem(item,message){
@@ -54,5 +54,23 @@ function showAlertOnItem(item,message){
 
 function deleteAlertOnItem(item,message){
     $("#formcheckdiv").html("");   
+	$("#waitmessage").remove();
 }
+
+function waitMessage(){
+    $("<div style='padding-top:100px;width:1000px;height:100px;background-color:grey;color:yellow;border: solid 1px red' id='waitmessage'></div>").appendTo("#content");
+    $("#waitmessage").html("Pleas wait..............");
+    $("#waitmessage").position({
+        my: "center center",
+        at:"center center",
+        of: $(window),
+        collision: "fit"
+    });
+}
+
+
+
+
+
+
 
